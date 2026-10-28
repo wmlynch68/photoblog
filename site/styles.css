@@ -57,7 +57,7 @@ main {
 }
 
 .intro {
-  padding: clamp(5rem, 13vw, 10rem) 0 clamp(4rem, 10vw, 8rem);
+  padding: 2rem 0 clamp(4rem, 10vw, 8rem);
 }
 
 .eyebrow {
@@ -71,7 +71,7 @@ main {
 
 h1 {
   margin: 0;
-  font-size: clamp(4rem, 10vw, 8.5rem);
+  font-size: clamp(2rem, 5vw, 4.25rem);
   font-weight: 400;
   letter-spacing: -0.075em;
   line-height: 0.86;
@@ -136,7 +136,7 @@ h2 {
   justify-content: space-between;
   gap: 2rem;
   margin-top: 1.5rem;
-  padding: clamp(1.5rem, 5vw, 3rem);
+  padding: 1rem clamp(1.5rem, 5vw, 3rem);
   border: 1px solid var(--line);
   color: var(--ink);
   text-decoration: none;
@@ -181,6 +181,10 @@ h2 {
 
 .slideshow-intro {
   padding-bottom: 4rem;
+}
+
+.slideshow-intro h1 {
+  font-size: clamp(1rem, 2.5vw, 2.125rem);
 }
 
 .back-link {
