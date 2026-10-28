@@ -10,13 +10,13 @@ A lightweight static photo blog, published with GitHub Pages.
 
 The workflow in `.github/workflows/pages.yml` publishes the contents of `site/`. Once the first deployment succeeds, GitHub Pages shows the site URL in the workflow run and in **Settings → Pages**.
 
-## Add a photo story
+## Add photos to the first slideshow
 
-Put image files inside `site/` (or a subfolder such as `site/photos/`) and add the story markup to `site/index.html`. Reference assets with relative paths, for example:
+Put image files in `site/photos/first-slideshow/`, then add one `<figure class="slide">` per photo inside the `<div class="slides">` in `site/first-slideshow/index.html`. The homepage links to the slideshow at `site/first-slideshow/`. The slideshow adds previous/next buttons, keyboard arrow navigation, and photo indicators automatically. Reference the photos with a path relative to the slideshow page, for example:
 
 ```html
-<figure>
-  <img src="photos/coast.jpg" alt="Waves breaking along the coast">
+<figure class="slide">
+  <img src="../photos/first-slideshow/coast.jpg" alt="Waves breaking along the coast">
   <figcaption>A quiet morning by the water.</figcaption>
 </figure>
 ```
