@@ -198,6 +198,8 @@ h2 {
 }
 
 .slides {
+  width: min(100%, 900px);
+  margin-inline: auto;
   overflow: hidden;
   background: #e9e5dc;
 }
@@ -215,10 +217,12 @@ h2 {
 
 .slide img {
   display: block;
-  width: 100%;
-  max-height: min(68vh, 720px);
-  aspect-ratio: 3 / 2;
-  object-fit: cover;
+  width: auto;
+  max-width: 100%;
+  max-height: min(65vh, 600px);
+  height: auto;
+  margin-inline: auto;
+  object-fit: contain;
 }
 
 .slide figcaption {
