@@ -69,12 +69,77 @@ main {
   text-transform: uppercase;
 }
 
+.page-title-row {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.3em;
+}
+
 h1 {
   margin: 0;
   font-size: clamp(2rem, 5vw, 4.25rem);
   font-weight: 400;
   letter-spacing: -0.075em;
   line-height: 0.86;
+}
+
+.title-note {
+  position: relative;
+  display: inline-block;
+  vertical-align: baseline;
+  flex: 0 0 auto;
+  font-size: clamp(1.2rem, 3vw, 2.55rem);
+  letter-spacing: normal;
+  line-height: 1;
+}
+
+.title-note summary {
+  display: inline-block;
+  color: var(--accent);
+  cursor: pointer;
+  list-style: none;
+}
+
+.title-note summary::-webkit-details-marker {
+  display: none;
+}
+
+.title-note summary:focus-visible {
+  border-radius: 0.15em;
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.title-note-popup {
+  position: absolute;
+  display: block;
+  z-index: 1;
+  top: calc(100% + 0.75rem);
+  left: 0;
+  width: min(34rem, calc(100vw - 3rem));
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  box-shadow: 0 0.5rem 1.5rem rgb(35 37 31 / 12%);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 1.6;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.title-note:hover .title-note-popup,
+.title-note:focus-within .title-note-popup,
+.title-note[open] .title-note-popup {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
 }
 
 .intro-copy {
@@ -175,8 +240,16 @@ h2 {
 }
 
 .story-link-arrow {
+  flex: 0 0 auto;
   color: var(--accent);
-  font-size: 1.75rem;
+  font-size: 2rem;
+  line-height: 1;
+  transition: transform 180ms ease;
+}
+
+.story-link:hover .story-link-arrow,
+.story-link:focus-visible .story-link-arrow {
+  transform: translate(0.15rem, -0.15rem);
 }
 
 .slideshow-intro {
